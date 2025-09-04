@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr informative</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" alt="" width="34px">
+    <span class="menu-toggle">&#9776;</span>
+    <nav>
+      <ul>
+        <li><a href="products"> <a href="https://www.youtube.com/@mr.informative">YouTube Channel &#8599; </a></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  </p>
+  </section>
+  <section id="products">
+    <h2>Original PDFs</h2>
+    <div class="products-grid">
+      <div class="product">
+        <img src="1.png" alt="Product 1">
+        <h3>Bhavishya Malika</h3>
+        <p>Indian future-predicting scripture that describes events that will unfold in the world, COVID19 was written
+          here.</p>
+        <a href="https://pages.razorpay.com/bmalika" style="text-decoration: none;"> <button class="button-87"
+            role="button"> Buy Now </button> </a>
+        </a>
+
+
+      </div>
+      <div class="product">
+        <img src="2.png" alt="Product 2">
+        <h3>Black Magic Book</h3>
+        <p> How to perform black magic step by step. I will not be responsible if anything went wrong. <b> Do it at your
+            own risk!</b></p>
+        <button class="button-87" role="button">Buy Now</button>
+      </div>
+
+
+      <div class="product">
+        <img src="3.png" alt="Product 3">
+        <h3>Kamasutra</h3>
+        <p>Coming soon..</p>
+        <button class="button-87" role="button">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="4.png" alt="Product 3">
+        <h3>Hymns Of India</h3>
+        <p>Coming soon..</p>
+        <button class="button-87" role="button">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="5.png" alt="Product 3">
+        <h3>Cremations</h3>
+        <p>Coming soon..</p>
+        <button class="button-87" role="button">Buy Now</button>
+      </div>
+    </div>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('showing');
+    });
+
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          sec.classList.add("show");
+        }
+      });
+    };
+
+    const setActiveLink = () => {
+      let index = sections.length;
+
+      while (--index && window.scrollY + 150 < sections[index].offsetTop) { }
+
+      navLinks.forEach(link => link.classList.remove("active"));
+      navLinks[index].classList.add("active");
+    };
+
+    window.addEventListener("scroll", () => {
+      revealOnScroll();
+      setActiveLink();
+    });
+
+    window.addEventListener("load", () => {
+      revealOnScroll();
+      setActiveLink();
+    });
+  </script>
+</body>
+
+</html>
